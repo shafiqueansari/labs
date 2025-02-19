@@ -1,1 +1,1 @@
-# labs
+# labs and projects and practice
