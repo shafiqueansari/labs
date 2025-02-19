@@ -1,0 +1,25 @@
+celsius = 25 # You can change this value
+fahrenheit = (celsius * 9/5) + 32
+print("Temperature in Fahrenheit:",fahrenheit)
+
+
+
+output - Temperature in Fahrenheit-77
+
+
+
+
+
+
+
+import math
+side1 = 5
+side2 = 6
+side3 = 7
+
+side = (side1 + side2 + side3)/2
+area = math.sqrt(side * (side-side1)*(side-side2)*(side-side3))
+print("area of the tringle :",area)
+
+
+output-area of the tringle : 14.69

@@ -1,0 +1,40 @@
+
+a = input("Enter your first number: ")
+b = input("Enter your second number: ")
+
+# swapping using a temporary variable
+temp = a
+a = b
+b = temp
+
+print("After swapping: ")
+print("first number:", a)
+print("second number:", b)
+
+output
+Enter your first number: 5  
+Enter your second number: 6
+After swapping: 
+first number: 6
+second number: 5
+
+
+
+
+
+principal = 200
+rate = 5
+time = 5
+
+simple_interest = (principal*rate*time)/100
+
+print("Simple interest : ",simple_interest)
+
+
+
+output
+Simple interest :  50.0
+
+
+
+
