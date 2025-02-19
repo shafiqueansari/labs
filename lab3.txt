@@ -1,0 +1,57 @@
+2. WAP to find out fare  for a user 
+
+  Take KM wise  distance travelled as input
+
+ Rate per KM : (0 to 10 ): 10 rs / (10-20 ): 5 rs / (above 20 ) : 4 rs.
+
+
+
+def calculate_fare(distance):
+    if distance <=10:
+        rate_per_KM=10      #rate for 0 to 10 KM
+    elif distance <=20:
+        rate_per_KM=5       #rate for 10 to 20KM
+     else:
+            rate_per_KM=4    #rate for above 20M
+        fare=distance*rate_per_KM
+        return fare
+    distance=int(input("enter the dist travelled in KM")) 
+    fare=calculate_fare(distance)
+    print(f"the fare for{distance} KM is:{fare}rs")
+  
+  if input is=10             the dist is in 0 to 10
+output will be 10*10=100rs
+if input is 50
+output will be 50*4=200rs    the dist is grter than 20km
+
+
+
+1. WAP to find out electricity bill for a user 
+
+  Take month wise units of consumptions
+
+ User types are : Household user/business user/ industrial user
+
+ Rate per unit : Household: 2 rs / business: 5 rs / Industrial : 10 rs.
+  
+
+ user_type=("enter which type of user are ")
+ bill_used=int(input("enter the bill amount in unit")
+
+  if user=="household":
+    print("bill_amont*2")
+   elif user=="buisness":
+     print("bill_amount*5)
+   elif user=="industrial":
+      print("bill_amount*10")
+    else:
+      print("invalid user")
+
+  if input=buisness
+            34unit
+   output= 34*5=170units
+
+
+
+
+
