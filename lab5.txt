@@ -1,0 +1,48 @@
+
+1. Write a python program to reverse a number using a while loop.
+
+def reverse_number(num):                               
+    reversed_num = 0
+    while num != 0:
+        digit = num % 10                                 # Get the last digit
+        reversed_num = reversed_num * 10 + digit         # Add it to the reversed number
+        num //= 10                                       # Remove the last digit from the original number
+    return reversed_num                                  #function call
+  
+
+number = int(input("Enter a number: "))                  #taking input from user
+print("Reversed number is:", reverse_number(number))
+
+
+input=1234
+output=4321
+input=9876
+output=6789
+
+
+ 2. Write a python program to check whether a number is palindrome or not?
+
+def is_palindrome(num):
+    original_num = num
+    reversed_num = 0
+
+    while num > 0:
+        digit = num % 10
+        reversed_num = reversed_num * 10 + digit
+        num //= 10
+
+    if original_num == reversed_num:
+        return True
+    else:
+        return False
+number = int(input("Enter a number: "))
+
+if is_palindrome(number):
+    print(f"{number} is a palindrome.")
+else:
+    print(f"{number} is not a palindrome.")
+
+input=121
+output=is a palindrome
+input=890
+output=is not a palindrome

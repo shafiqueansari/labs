@@ -1,0 +1,52 @@
+1:Python program to check if the given string is a palindrome 
+
+def is_palindrome(string):
+                                                      # Remove spaces and convert to lowercase 
+    string = string.replace(" ", "").lower()
+
+                                             #  if the string is equal to its reverse
+    if string == string[::-1]:
+        return True
+    else:
+        return False
+
+input_string = input("Enter a string: ")
+
+if is_palindrome(input_string):
+    print(f"'{input_string}' is a palindrome.")
+else:
+    print(f"'{input_string}' is not a palindrome.")
+
+input=shafique
+output=is not a palindrome
+input=mom
+output=is a palindrome
+
+
+2. Python program to check if a given number is an Armstrong number
+def is_armstrong(num):
+   
+    num_str = str(num)
+    num_digits = len(num_str)
+    
+ 
+    sum_of_powers = sum(int(digit) ** num_digits for digit in num_str)
+    
+   
+    if sum_of_powers == num:
+        return True
+    else:
+        return False
+
+number = int(input("Enter a number: "))
+
+if is_armstrong(number):
+    print(f"{number} is an Armstrong number.")
+else:
+    print(f"{number} is not an Armstrong number.")
+
+
+input=132
+output=is not an armstrong number
+input=153
+output=is an armstrong number
