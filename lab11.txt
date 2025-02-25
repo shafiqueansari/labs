@@ -1,0 +1,54 @@
+1.Write a Python program to get the key, value and item in a dictionary.
+
+ input:dict_num = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+
+dict_num = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+
+for key, value in dict_num.items():
+    print(f"Key: {key}, Value: {value}, Item: ({key}, {value})")
+
+output=Key: 1, Value: 10, Item: (1, 10)
+Key: 2, Value: 20, Item: (2, 20)
+Key: 3, Value: 30, Item: (3, 30)
+Key: 4, Value: 40, Item: (4, 40)
+Key: 5, Value: 50, Item: (5, 50)
+Key: 6, Value: 60, Item: (6, 60)
+
+
+2. Write a Python program to deduce use of multiple dictionary functions.
+
+dict_example = {
+    "name": "John",
+    "age": 25,
+    "city": "New York",
+    "profession": "Engineer"
+}
+
+age = dict_example.get("age")                  # Retrieve value for key 'age'
+print(f"Age: {age}")
+
+keys = dict_example.keys()
+print(f"Keys: {keys}")
+
+values = dict_example.values()
+print(f"Values: {values}")
+
+items = dict_example.items()
+print(f"Items: {items}")
+
+dict_example.clear()
+print(f"Dictionary after clear: {dict_example}")
+
+original_dict = {"name": "Alice", "age": 30}
+copied_dict = original_dict.copy()
+print(f"Original Dictionary: {original_dict}")
+print(f"Copied Dictionary: {copied_dict}")
+
+
+
+output=Age: 25
+Keys: dict_keys(['name', 'age', 'city', 'profession'])
+Values: dict_values(['John', 25, 'New York', 'Engineer'])
+Items: dict_items([('name', 'John'), ('age', 25), ('city', 'New York'), ('profession', 'Engineer')])
+Original Dictionary: {'name': 'Alice', 'age': 30}
+Copied Dictionary: {'name': 'Alice', 'age': 30}
