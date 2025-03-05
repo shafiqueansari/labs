@@ -1,0 +1,48 @@
+
+
+1. Write a function in Python to count and display the total number of words in a text file “ABC.txt” 
+
+also count uppercase / lowercase character in same  text file
+
+def count_words_and_characters(filedemo):
+    word_count = 0
+    uppercase_count = 0
+    lowercase_count = 0
+
+    file= open("C:\studentdemo.txt, 'r') 
+        for line in file:
+            words = line.split()
+            word_count += len(words)
+
+            for char in line:
+                if char.isupper():
+                    uppercase_count += 1
+                elif char.islower():
+                    lowercase_count += 1
+
+    print(f"Total number of words: {word_count}")
+    print(f"Total number of uppercase characters: {uppercase_count}")
+    print(f"Total number of lowercase characters: {lowercase_count}")
+
+count_words_and_characters("filedemo")
+
+
+
+output=total number of words=98
+total number of uppercase letter=9
+total number of lowercase letter=72
+
+2. Write a function display_words() in python to read lines from a text file "story.txt", and display those words, which are less than 4 characters.
+
+def display_words(story.txt):
+    with open(filename, 'r') as file:
+        for line in file:
+        
+            words = line.split()
+
+          
+            for word in words:
+                if len(word) < 4:
+                    print(word)
+
+display_words("story.txt")

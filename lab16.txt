@@ -1,0 +1,106 @@
+
+1:write a Python script to read a CSV file with missing values and replace the
+
+missing values with a default value (e.g., "Unknown" or 0).
+
+Sample Data (missing_data.csv):
+
+Name, Age, City
+
+Alice, , New York
+
+Bob, 25,
+
+Charlie, 35, Chicago
+
+import csv
+default_values = {'Name': 'Unknown', 'Age': 0, 'City': 'Unknown'}
+
+with open('missing_data.csv', mode='r', newline='') as infile:
+    reader = csv.DictReader(infile)
+    
+    updated_rows = []
+
+    for row in reader:
+        for fieldname in row:
+            if row[fieldname] == '' or row[fieldname] is None:
+                row[fieldname] = default_values.get(fieldname, 'Unknown')
+        updated_rows.append(row)
+
+with open('filled_missing_data.csv', mode='w', newline='') as outfile:
+    fieldnames = ['Name', 'Age', 'City']
+    writer = csv.DictWriter(outfile, fieldnames=fieldnames)
+
+    writer.writeheader()
+    writer.writerows(updated_rows)
+
+print("Missing values have been replaced and saved to 'filled_missing_data.csv'.")
+
+
+2. Write a Python script to validate JSON data by checking if it contains required
+
+fields and if the data types are correct (e.g., integers for IDs, strings for names).
+
+Sample Data (data.json):
+
+
+
+[
+
+{
+
+"Product ID": 101,
+
+"Name": "Widget A",
+
+"Price": 25.50
+
+},
+
+{
+
+"Product ID": "102",
+
+"Name": "Widget B",
+
+"Price": "40.00"
+
+}
+
+]
+
+
+
+
+import json
+def validate_json(data):
+    required_fields = {
+        "Product ID": int,
+        "Name": str,
+        "Price": float
+    }
+    
+    for item in data:
+      
+        for field, expected_type in required_fields.items():
+            if field not in item:
+                print(f"Error: Missing field '{field}'")
+                return False
+            if not isinstance(item[field], expected_type):
+                print(f"Error: Field '{field}' should be of type {expected_type.__name__}, but got {type(item[field]).__name__}")
+                return False
+    
+    return True
+
+with open('data.json', 'r') as file:
+    data = json.load(file)
+
+if validate_json(data):
+    print("JSON data is valid.")
+else:
+    print("JSON data is invalid.")
+
+
+output=Error: Field 'Product ID' should be of type int, but got str
+JSON data is invalid.
+
