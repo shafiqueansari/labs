@@ -1,0 +1,80 @@
+Q.1: Managing an Online Store Inventory Scenario:
+You manage an online store that sells various products. You need to keep track of which
+products are in stock and which are out of stock.
+
+Use Python sets to manage this inventory.
+
+Tasks:
+
+1. Create a set in_stock containing the products 'laptop', 'mouse', 'keyboard', and 'monitor'.
+2. Create another set out_of_stock containing 'printer' and 'webcam'.
+3. A new shipment arrives, restocking the 'printer' and adding a new product 'tablet'.
+Update the in_stock set accordingly.
+4. A customer reports that the last 'monitor' was sold. Move 'monitor' to the out_of_stock set.
+5. Find out which products are either in stock or out of stock, but not both.
+6. Calculate which products are still available for sale.
+
+ 1. Initialize the sets
+in_stock = {'laptop', 'mouse', 'keyboard', 'monitor'}
+out_of_stock = {'printer', 'webcam'}
+
+# 2. Restock 'printer' and add 'tablet'
+in_stock.add('printer')
+in_stock.add('tablet')
+out_of_stock.discard('printer')
+
+# 3. Move 'monitor' to out_of_stock
+in_stock.discard('monitor')
+out_of_stock.add('monitor')
+
+# 4. Find exclusive products
+exclusive_products = in_stock.symmetric_difference(out_of_stock)
+print(f"Exclusive products: {exclusive_products}")
+
+# 5. Products still available for sale
+available_for_sale = in_stock
+print(f"Products available for sale: {available_for_sale}")
+
+output=Exclusive products: {'tablet', 'keyboard', 'printer', 'laptop', 'monitor', 'webcam', 'mouse'}
+Products available for sale: {'tablet', 'keyboard', 'printer', 'laptop', 'mouse'}
+
+
+Q.2: Student Enrollment System Scenario:
+You are developing a student enrollment system for a university. The university offers
+courses in different subjects, and some students are enrolled in multiple courses.
+
+Tasks:
+
+1. Create a set course_A containing students 'Alice', 'Bob', 'Charlie'.
+2. Create another set course_B containing students 'Charlie', 'David', 'Eva'.
+3. Find out which students are enrolled in both course_A and course_B.
+4. List all students who are enrolled in either course_A or course_B.
+5. Identify students who are enrolled in course_A but not in course_B.
+6. Determine the students who are enrolled in only one course.
+
+
+
+# 1. Create sets for courses
+course_A = set(['Alice', 'Bob', 'Charlie'])
+course_B = set(['Charlie', 'David', 'Eva'])
+
+# 2. Find students enrolled in both courses
+common_students = course_A.intersection(course_B)
+print(f"Students enrolled in both courses: {common_students}")
+
+# 3. List all students enrolled in either course
+all_students = course_A.union(course_B)
+print(f"All students enrolled in either course: {all_students}")
+
+# 4. Find students enrolled in course_A but not in course_B
+only_in_A = course_A.difference(course_B)
+print(f"Students enrolled only in course_A: {only_in_A}")
+
+# 5. Find students enrolled in only one course
+only_one_course = course_A.symmetric_difference(course_B)
+print(f"Students enrolled in only one course: {only_one_course}")
+
+output=Students enrolled in both courses: {'Charlie'}
+All students enrolled in either course: {'Charlie', 'Eva', 'Alice', 'David', 'Bob'}
+Students enrolled only in course_A: {'Alice', 'Bob'}
+Students enrolled in only one course: {'Eva', 'Bob', 'Alice', 'David'}
