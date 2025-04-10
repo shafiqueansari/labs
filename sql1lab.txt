@@ -1,0 +1,20 @@
+1.Create a table with named Student with attributes:
+ ● StudentID (Primary Key) ● FirstName ● LastName ● DateOfBirth ● Gender ● Email ● Phone in mysql
+
+CREATE TABLE Student (
+    StudentID INT  PRIMARY KEY,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    DateOfBirth DATE NOT NULL,
+    Gender ENUM('Male', 'Female', 'Other') NOT NULL,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    Phone VARCHAR(15) NOT NULL
+);
+
+2:Create a table with name Course with attributes: ● CourseID (Primary Key) ● CourseTitle ● Credits
+
+CREATE TABLE Course (
+    CourseID INT PRIMARY KEY,
+    CourseTitle VARCHAR(100) NOT NULL,
+    Credits INT NOT NULL
+);
